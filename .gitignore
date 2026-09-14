@@ -1,0 +1,12 @@
+.conda/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Generated data
+data/bronze/**
+data/silver/**
+data/gold/**
+!data/bronze/.gitkeep
+!data/silver/.gitkeep
+!data/gold/.gitkeep
