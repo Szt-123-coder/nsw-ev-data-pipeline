@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "NSW_EV_Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "01f2b091-103b-4a68-af60-be99b2de4a94"
+  }
+}

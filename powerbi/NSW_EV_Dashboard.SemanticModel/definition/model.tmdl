@@ -1,0 +1,23 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: zh-CN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["EV_Locations","SA4_Summary","GCC_Summary","Operator_Summary","ChargerType_Summary"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table EV_Locations
+ref table SA4_Summary
+ref table GCC_Summary
+ref table Operator_Summary
+ref table ChargerType_Summary
+
+ref cultureInfo zh-CN
+

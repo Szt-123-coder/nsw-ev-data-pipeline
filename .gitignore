@@ -14,3 +14,10 @@ data/gold/**
 !data/silver/.gitkeep
 !data/gold/.gitkeep
 !data/database/.gitkeep
+
+# Power BI machine-local settings and data cache
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+# Power BI local state / cache
+powerbi/**/.pbi/**
+*.pbix

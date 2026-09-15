@@ -1,0 +1,31 @@
+{
+  "name": "NSW-EV-Portfolio-236fc1bb88160c2846c5.json",
+  "dataColors": [
+    "#087F8C",
+    "#426A9C",
+    "#80939F",
+    "#C79840",
+    "#655C88",
+    "#4D8B76"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#183B4E",
+  "tableAccent": "#087F8C",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 16,
+      "color": "#183B4E"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 12,
+      "color": "#5B6F7C"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 34,
+      "color": "#087F8C"
+    }
+  }
+}

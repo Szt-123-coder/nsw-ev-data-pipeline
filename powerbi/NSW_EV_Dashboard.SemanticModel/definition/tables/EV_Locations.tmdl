@@ -1,0 +1,277 @@
+table EV_Locations
+	lineageTag: ae8ab557-9d09-4250-8477-c89aa5fb3fd6
+
+	measure 'Total Charging Locations' = COUNTROWS(EV_Locations)
+		formatString: #,0
+		displayFolder: KPIs
+		lineageTag: e0f11bc1-44e3-43c5-949a-6fcd7b4b9fd9
+
+	measure 'Total Plugs' = SUM(EV_Locations[number_of_plugs])
+		formatString: #,0
+		displayFolder: KPIs
+		lineageTag: 25695b3f-a394-4ab4-bfa6-3370f6598331
+
+	measure 'Avg Plugs per Location' =
+			DIVIDE(
+			    [Total Plugs],
+			    [Total Charging Locations]
+			)
+		formatString: 0.00
+		displayFolder: KPIs
+		lineageTag: 986a2d8e-7664-4e24-ae0f-e8e16627de84
+
+	measure 'Avg Charger Power (kW)' = AVERAGE(EV_Locations[charger_power_kw])
+		formatString: 0.00
+		displayFolder: KPIs
+		lineageTag: cad0229b-c88a-4f7a-be5f-f41af3914400
+
+	measure 'Max Charger Power (kW)' = MAX(EV_Locations[charger_power_kw])
+		formatString: 0.00
+		displayFolder: KPIs
+		lineageTag: 865d629d-f89c-40b3-884b-7dece2505755
+
+	measure 'Operator Count' =
+			CALCULATE(
+			    DISTINCTCOUNT(EV_Locations[operator_standardised]),
+			    EV_Locations[operator_standardised] <> BLANK()
+			)
+		formatString: #,0
+		displayFolder: KPIs
+		lineageTag: 778f6342-a322-4c35-9e10-bf8718644d6c
+
+	measure 'SA4 Count' = DISTINCTCOUNT(EV_Locations[sa4_code])
+		formatString: #,0
+		displayFolder: KPIs
+		lineageTag: cd6a8531-3320-4aba-9473-3c170bb875f7
+
+	measure 'Existing Locations' =
+			CALCULATE(
+			    [Total Charging Locations],
+			    EV_Locations[is_upcoming] = FALSE()
+			)
+		formatString: #,0
+		displayFolder: KPIs
+		lineageTag: db3bd6d0-6797-4abf-86ea-d57d3cd00d17
+
+	measure 'Upcoming Locations' =
+			CALCULATE(
+			    [Total Charging Locations],
+			    EV_Locations[is_upcoming] = TRUE()
+			)
+		formatString: #,0
+		displayFolder: KPIs
+		lineageTag: c09398f4-1392-4474-8287-965419853d48
+
+	measure 'AC Locations' =
+			CALCULATE(
+			    [Total Charging Locations],
+			    EV_Locations[Charger Type Display] = "AC"
+			)
+		formatString: #,0
+		displayFolder: KPIs
+		lineageTag: bc1f7ac7-d722-4b98-ab4c-bc8b0328a016
+
+	measure 'DC Locations' =
+			CALCULATE(
+			    [Total Charging Locations],
+			    EV_Locations[Charger Type Display] = "DC"
+			)
+		formatString: #,0
+		displayFolder: KPIs
+		lineageTag: e0905734-5399-440c-ba32-6b0e643b9a18
+
+	column source
+		dataType: string
+		lineageTag: bd8b7baf-9050-4c7d-9803-58d544631f60
+		summarizeBy: none
+		sourceColumn: source
+
+		annotation SummarizationSetBy = Automatic
+
+	column station_name
+		dataType: string
+		lineageTag: 5a767193-689e-4c96-87e8-dd7ba8fa93b5
+		summarizeBy: none
+		sourceColumn: station_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column station_address
+		dataType: string
+		lineageTag: 9f3aa660-bcdd-43d7-ad6d-e487fc403d6c
+		summarizeBy: none
+		sourceColumn: station_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column operator_standardised
+		dataType: string
+		lineageTag: e1e69c37-77db-4139-92c3-c07103a95f95
+		summarizeBy: none
+		sourceColumn: operator_standardised
+
+		annotation SummarizationSetBy = Automatic
+
+	column number_of_plugs
+		dataType: int64
+		formatString: 0
+		lineageTag: 70e86556-e04c-4717-ab28-f20c7524fecf
+		summarizeBy: sum
+		sourceColumn: number_of_plugs
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: bbb44a0f-3565-4417-983f-98a0e9f0f55e
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: d4fa5f7a-849a-4325-a97a-dc2c8dac8f41
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lga_name
+		dataType: string
+		lineageTag: 79cffcbb-a4b4-47c5-a568-bc5d65829516
+		summarizeBy: none
+		sourceColumn: lga_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column postcode
+		dataType: string
+		lineageTag: 66de7100-073a-479c-a025-5ac306270302
+		dataCategory: PostalCode
+		summarizeBy: none
+		sourceColumn: postcode
+
+		annotation SummarizationSetBy = User
+
+	column charger_type
+		dataType: string
+		lineageTag: 5c7b8279-b952-4cb4-91ae-9b5252afbebd
+		summarizeBy: none
+		sourceColumn: charger_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_upcoming
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0e4cabe8-3caa-41e9-91f4-172988e137cd
+		summarizeBy: none
+		sourceColumn: is_upcoming
+
+		annotation SummarizationSetBy = Automatic
+
+	column charger_power_kw
+		dataType: double
+		lineageTag: 01f4e31f-3432-4b31-96c7-5ecf97eee23f
+		summarizeBy: sum
+		sourceColumn: charger_power_kw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sa4_code
+		dataType: string
+		lineageTag: 608d42b7-a9fe-4e84-a296-64a659912e73
+		summarizeBy: none
+		sourceColumn: sa4_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sa4_name
+		dataType: string
+		lineageTag: a522edd3-1fe8-4dcf-b515-5c7c84a10b47
+		summarizeBy: none
+		sourceColumn: sa4_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column gcc_code
+		dataType: string
+		lineageTag: 051e0bf9-d8dd-4bcd-b7d0-c1ef2f20c81e
+		summarizeBy: none
+		sourceColumn: gcc_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column gcc_name
+		dataType: string
+		lineageTag: b3db47de-7594-48c1-98e7-a993ad37c6c7
+		summarizeBy: none
+		sourceColumn: gcc_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sa4_area_sqkm
+		dataType: double
+		lineageTag: 31a2184f-cbc3-4afb-93ac-1ad2d97865b6
+		summarizeBy: sum
+		sourceColumn: sa4_area_sqkm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sa4_match_method
+		dataType: string
+		lineageTag: 69e6b629-8223-4318-905d-b2a35d37a2fd
+		summarizeBy: none
+		sourceColumn: sa4_match_method
+
+		annotation SummarizationSetBy = Automatic
+
+	column sa4_match_distance_m
+		dataType: double
+		lineageTag: 55491306-0d51-4a46-a215-29fa10d67bf0
+		summarizeBy: sum
+		sourceColumn: sa4_match_distance_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Charger Type Display' = COALESCE(EV_Locations[charger_type], "Unknown")
+		dataType: string
+		lineageTag: babd7fa1-1493-428a-8b52-998c137dc0f4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	column 'Station Display' = COALESCE(EV_Locations[station_name], EV_Locations[station_address])
+		dataType: string
+		lineageTag: 3eb96a4f-47c9-45cd-b027-78f59552c2ac
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	partition EV_Locations = m
+		mode: import
+		source =
+				let
+				    源 = Parquet.Document(File.Contents("D:\mycode\nsw-ev-data-pipeline\data\silver\ev_sa4\ev_charging_locations_sa4_silver.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null]),
+				    删除的其他列 = Table.SelectColumns(源,{"source", "station_name", "station_address", "operator_standardised", "number_of_plugs", "latitude", "longitude", "lga_name", "postcode", "charger_type", "is_upcoming", "charger_power_kw", "sa4_code", "sa4_name", "gcc_code", "gcc_name", "sa4_area_sqkm", "sa4_match_method", "sa4_match_distance_m"}),
+				    更改的类型 = Table.TransformColumnTypes(删除的其他列,{{"source", type text}, {"station_name", type text}, {"station_address", type text}, {"operator_standardised", type text}, {"number_of_plugs", Int64.Type}, {"latitude", type number}, {"longitude", type number}, {"charger_power_kw", type number}, {"sa4_match_distance_m", type number}, {"sa4_area_sqkm", type number}, {"gcc_name", type text}, {"gcc_code", type text}, {"sa4_name", type text}, {"sa4_code", type text}, {"is_upcoming", type logical}, {"charger_type", type text}, {"postcode", type text}, {"lga_name", type text}, {"sa4_match_method", type text}})
+				in
+				    更改的类型
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

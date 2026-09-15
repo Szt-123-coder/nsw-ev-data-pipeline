@@ -1,0 +1,515 @@
+cultureInfo zh-CN
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "ev_locations.is_upcoming": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "is_upcoming"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Upcoming location?  True = upcoming · False = existing": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.operator_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "Operator Count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Operators": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.station_display": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "Station Display"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Station": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.latitude": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "latitude"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Latitude": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.longitude": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "longitude"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Longitude": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.total_charging_locations": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "Total Charging Locations"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Charging locations": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.total_plugs": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "Total Plugs"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total plugs": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.avg_charger_power_kw": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "Avg Charger Power (kW)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg charger power (kW)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.sa4_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "SA4 Count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SA4 regions": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "gcc_summary.gcc_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GCC_Summary",
+			          "ConceptualProperty": "gcc_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Region": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "chargertype_summary.charger_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ChargerType_Summary",
+			          "ConceptualProperty": "charger_type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Charger type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sa4_summary.sa4_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SA4_Summary",
+			          "ConceptualProperty": "sa4_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SA4 region": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sa4_summary.charging_location_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SA4_Summary",
+			          "ConceptualProperty": "charging_location_count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Charging locations": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sa4_summary.total_plug_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SA4_Summary",
+			          "ConceptualProperty": "total_plug_count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total plugs": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sa4_summary.avg_plugs_per_location": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SA4_Summary",
+			          "ConceptualProperty": "avg_plugs_per_location"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg plugs / location": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sa4_summary.avg_charger_power_kw": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SA4_Summary",
+			          "ConceptualProperty": "avg_charger_power_kw"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg power (kW)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sa4_summary.locations_per_1000_sqkm": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SA4_Summary",
+			          "ConceptualProperty": "locations_per_1000_sqkm"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Locations / 1,000 km²": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "operator_summary.operator_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Operator_Summary",
+			          "ConceptualProperty": "operator_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Operator": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "operator_summary.charging_location_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Operator_Summary",
+			          "ConceptualProperty": "charging_location_count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Charging locations": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "operator_summary.total_plug_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Operator_Summary",
+			          "ConceptualProperty": "total_plug_count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total plugs": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "operator_summary.avg_plugs_per_location": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Operator_Summary",
+			          "ConceptualProperty": "avg_plugs_per_location"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg plugs / location": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "operator_summary.sa4_coverage_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Operator_Summary",
+			          "ConceptualProperty": "sa4_coverage_count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SA4 regions": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "operator_summary.avg_charger_power_kw": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Operator_Summary",
+			          "ConceptualProperty": "avg_charger_power_kw"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg power (kW)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "operator_summary.max_charger_power_kw": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Operator_Summary",
+			          "ConceptualProperty": "max_charger_power_kw"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Max power (kW)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

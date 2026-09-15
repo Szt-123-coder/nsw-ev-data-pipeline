@@ -1,0 +1,134 @@
+table SA4_Summary
+	lineageTag: baf6bd4c-002d-47e6-b835-c766f3c16c8b
+
+	column sa4_code
+		dataType: string
+		lineageTag: 9cf5158c-5363-4e54-ad82-0359ef4993ba
+		summarizeBy: none
+		sourceColumn: sa4_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sa4_name
+		dataType: string
+		lineageTag: 814b44ec-931d-4df2-8a6b-f7f9c358a388
+		summarizeBy: none
+		sourceColumn: sa4_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column gcc_code
+		dataType: string
+		lineageTag: ed6723f7-586a-4acc-a369-558aa856c7fb
+		summarizeBy: none
+		sourceColumn: gcc_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column gcc_name
+		dataType: string
+		lineageTag: e6a98248-8519-4967-adff-26c7c2272f83
+		summarizeBy: none
+		sourceColumn: gcc_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sa4_area_sqkm
+		dataType: double
+		lineageTag: 86e54e3f-51a1-41ad-9d48-085b78c0c225
+		summarizeBy: none
+		sourceColumn: sa4_area_sqkm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column charging_location_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 2bf0e494-f3d1-4eee-9455-138248eba12a
+		summarizeBy: none
+		sourceColumn: charging_location_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_plug_count
+		dataType: double
+		lineageTag: c149008f-18bb-4a16-bfc5-1e045a38d19d
+		summarizeBy: none
+		sourceColumn: total_plug_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_plugs_per_location
+		dataType: double
+		lineageTag: b2dedd21-729d-4d45-87e1-545e46614df6
+		summarizeBy: none
+		sourceColumn: avg_plugs_per_location
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column operator_count
+		dataType: int64
+		formatString: 0
+		lineageTag: f691f871-c7a2-4d5e-a11f-3de7d0e2de7f
+		summarizeBy: none
+		sourceColumn: operator_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_charger_power_kw
+		dataType: double
+		lineageTag: 2ecf1e26-d9dc-479a-820e-7d46f1709e5c
+		summarizeBy: none
+		sourceColumn: avg_charger_power_kw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_charger_power_kw
+		dataType: int64
+		formatString: 0
+		lineageTag: 41ec6ad9-e810-4e81-98ff-c24bedbe59ba
+		summarizeBy: none
+		sourceColumn: max_charger_power_kw
+
+		annotation SummarizationSetBy = Automatic
+
+	column locations_per_1000_sqkm
+		dataType: double
+		lineageTag: cae77ddc-9456-4524-848e-8436276f3ff6
+		summarizeBy: none
+		sourceColumn: locations_per_1000_sqkm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fallback_location_count
+		dataType: double
+		lineageTag: 4d768518-87b5-41b1-9c08-ba1fde3c350a
+		summarizeBy: none
+		sourceColumn: fallback_location_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition SA4_Summary = m
+		mode: import
+		source =
+				let
+				    源 = Parquet.Document(File.Contents("D:\mycode\nsw-ev-data-pipeline\data\gold\sa4_ev_summary.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+				in
+				    源
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

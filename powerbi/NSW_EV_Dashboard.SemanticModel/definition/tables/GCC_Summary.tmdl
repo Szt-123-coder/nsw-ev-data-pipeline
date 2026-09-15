@@ -1,0 +1,107 @@
+table GCC_Summary
+	lineageTag: 247bb0d9-ff35-4044-a245-d875182a444d
+
+	column gcc_code
+		dataType: string
+		lineageTag: 88915d91-0167-4b52-b48e-af79350c7a6c
+		summarizeBy: none
+		sourceColumn: gcc_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column gcc_name
+		dataType: string
+		lineageTag: 0b6b6846-b3ac-43f5-bb58-916e4175acfc
+		summarizeBy: none
+		sourceColumn: gcc_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column charging_location_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 18af190e-33bd-408a-95e7-23ff1956ae2d
+		summarizeBy: none
+		sourceColumn: charging_location_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_plug_count
+		dataType: double
+		lineageTag: d9a44386-12bc-4505-9807-79adebde1b78
+		summarizeBy: none
+		sourceColumn: total_plug_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_plugs_per_location
+		dataType: double
+		lineageTag: eab78e67-bd46-45ce-b1c0-89bed2da96d7
+		summarizeBy: none
+		sourceColumn: avg_plugs_per_location
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column operator_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ada3de2-ec2f-429f-8d8c-6eaa247565c2
+		summarizeBy: none
+		sourceColumn: operator_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_charger_power_kw
+		dataType: double
+		lineageTag: d214e54e-4541-40a4-9cdd-73c98fe33a7e
+		summarizeBy: none
+		sourceColumn: avg_charger_power_kw
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_charger_power_kw
+		dataType: int64
+		formatString: 0
+		lineageTag: 196d1dc0-8053-4fe8-ade8-ae60ec2b2aa5
+		summarizeBy: none
+		sourceColumn: max_charger_power_kw
+
+		annotation SummarizationSetBy = Automatic
+
+	column sa4_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 34b5d5c8-41e2-4ab6-b191-e5d97cd6af1d
+		summarizeBy: none
+		sourceColumn: sa4_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column fallback_location_count
+		dataType: double
+		lineageTag: cd07198e-232e-4d60-b2d2-b2f753538c02
+		summarizeBy: none
+		sourceColumn: fallback_location_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition GCC_Summary = m
+		mode: import
+		source =
+				let
+				    源 = Parquet.Document(File.Contents("D:\mycode\nsw-ev-data-pipeline\data\gold\gcc_ev_summary.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null])
+				in
+				    源
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,16 @@
+relationship AutoDetected_ca09de96-f67b-4aae-9580-8e15ad6cac0f
+	fromColumn: EV_Locations.'Charger Type Display'
+	toColumn: ChargerType_Summary.charger_type
+
+relationship AutoDetected_2424391d-e9e9-43fc-8dd4-fc0f73ad11db
+	fromColumn: EV_Locations.sa4_code
+	toColumn: SA4_Summary.sa4_code
+
+relationship AutoDetected_70bc2449-075e-47a5-a266-097c87c7bfdd
+	fromColumn: EV_Locations.gcc_code
+	toColumn: GCC_Summary.gcc_code
+
+relationship 2930ea2f-20db-41b0-8f8a-dcf0c8ecd2a5
+	fromColumn: EV_Locations.operator_standardised
+	toColumn: Operator_Summary.operator_name
+
