@@ -293,6 +293,7 @@ def build_database(
     sa4_silver_path: Path,
     ev_sa4_silver_path: Path,
     gold_dir: Path,
+    population_silver_path: Path | None = None,
 ) -> dict:
     """Run the complete Silver-to-Gold DuckDB pipeline."""
     con = connect_database(database_path)
@@ -309,6 +310,10 @@ def build_database(
         )
 
         create_gold_tables(con)
+
+        if population_silver_path is not None:
+            from src.database.population_metrics import add_population_metrics
+            add_population_metrics(con, population_silver_path)
 
         validation = validate_database(con)
 
