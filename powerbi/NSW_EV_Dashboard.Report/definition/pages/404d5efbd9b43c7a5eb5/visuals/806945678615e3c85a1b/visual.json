@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "806945678615e3c85a1b",
   "position": {
     "x": 32,
@@ -104,6 +104,51 @@
               "queryRef": "SA4_Summary.locations_per_1000_sqkm",
               "nativeQueryRef": "locations_per_1000_sqkm",
               "displayName": "Locations / 1,000 km²"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SA4_Summary"
+                    }
+                  },
+                  "Property": "resident_population"
+                }
+              },
+              "queryRef": "SA4_Summary.resident_population",
+              "nativeQueryRef": "resident_population",
+              "displayName": "Residents (2025)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SA4_Summary"
+                    }
+                  },
+                  "Property": "locations_per_10000_residents"
+                }
+              },
+              "queryRef": "SA4_Summary.locations_per_10000_residents",
+              "nativeQueryRef": "locations_per_10000_residents",
+              "displayName": "Existing locations / 10k"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SA4_Summary"
+                    }
+                  },
+                  "Property": "dc_locations_per_10000_residents"
+                }
+              },
+              "queryRef": "SA4_Summary.dc_locations_per_10000_residents",
+              "nativeQueryRef": "dc_locations_per_10000_residents",
+              "displayName": "Existing DC / 10k"
             }
           ]
         }
@@ -133,14 +178,14 @@
             "autoSizeColumnWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "columnAdjustment": {
               "expr": {
                 "Literal": {
-                  "Value": "'fixedWidth'"
+                  "Value": "'fitToContent'"
                 }
               }
             },
@@ -186,6 +231,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "defaultColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
             }
           }
         }
@@ -196,7 +248,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "370D"
+                  "Value": "330D"
                 }
               }
             }
@@ -210,7 +262,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "281.2D"
+                  "Value": "181D"
                 }
               }
             }
@@ -224,7 +276,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "281.2D"
+                  "Value": "181D"
                 }
               }
             }
@@ -238,7 +290,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "281.2D"
+                  "Value": "181D"
                 }
               }
             }
@@ -252,7 +304,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "281.2D"
+                  "Value": "181D"
                 }
               }
             }
@@ -266,13 +318,55 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "281.2D"
+                  "Value": "181D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "SA4_Summary.locations_per_1000_sqkm"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "181D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SA4_Summary.resident_population"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "181D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SA4_Summary.locations_per_10000_residents"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "181D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SA4_Summary.dc_locations_per_10000_residents"
           }
         }
       ],
@@ -485,6 +579,69 @@
           "selector": {
             "metadata": "SA4_Summary.locations_per_1000_sqkm"
           }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SA4_Summary.resident_population"
+          }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SA4_Summary.locations_per_10000_residents"
+          }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SA4_Summary.dc_locations_per_10000_residents"
+          }
         }
       ]
     },
@@ -645,7 +802,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Full-dataset summary · SA4 selection only'"
+                  "Value": "'Baseline: counts include upcoming; population rates use existing locations · SA4 selection only'"
                 }
               }
             },

@@ -3,14 +3,14 @@
   "name": "6a9a468e35118f6af062",
   "position": {
     "x": 1264,
-    "y": 408,
+    "y": 544,
     "z": 13000,
-    "height": 640,
+    "height": 504,
     "width": 624,
     "tabOrder": 13
   },
   "visual": {
-    "visualType": "azureMap",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,159 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "EV_Locations"
+                      "Entity": "SA4_Summary"
                     }
                   },
-                  "Property": "Station Display"
+                  "Property": "sa4_name"
                 }
               },
-              "queryRef": "EV_Locations.Station Display",
-              "nativeQueryRef": "Station Display",
-              "active": true,
-              "displayName": "Station"
-            }
-          ]
-        },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "EV_Locations"
-                        }
-                      },
-                      "Property": "Station Display"
-                    }
-                  },
-                  "Function": 3
-                }
-              },
-              "queryRef": "Min(EV_Locations.Station Display)",
-              "nativeQueryRef": "Min of Station Display",
-              "displayName": "Station"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "EV_Locations"
-                        }
-                      },
-                      "Property": "operator_standardised"
-                    }
-                  },
-                  "Function": 3
-                }
-              },
-              "queryRef": "Min(EV_Locations.operator_standardised)",
-              "nativeQueryRef": "Min of operator_standardised",
-              "displayName": "Operator"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "EV_Locations"
-                        }
-                      },
-                      "Property": "Charger Type Display"
-                    }
-                  },
-                  "Function": 3
-                }
-              },
-              "queryRef": "Min(EV_Locations.Charger Type Display)",
-              "nativeQueryRef": "Min of Charger Type Display",
-              "displayName": "Charger type"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "EV_Locations"
-                        }
-                      },
-                      "Property": "charger_power_kw"
-                    }
-                  },
-                  "Function": 4
-                }
-              },
-              "queryRef": "Max(EV_Locations.charger_power_kw)",
-              "nativeQueryRef": "Max of charger_power_kw",
-              "displayName": "Charger power (kW)"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "EV_Locations"
-                        }
-                      },
-                      "Property": "number_of_plugs"
-                    }
-                  },
-                  "Function": 4
-                }
-              },
-              "queryRef": "Max(EV_Locations.number_of_plugs)",
-              "nativeQueryRef": "Max of number_of_plugs",
-              "displayName": "Plugs"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "EV_Locations"
-                        }
-                      },
-                      "Property": "sa4_name"
-                    }
-                  },
-                  "Function": 3
-                }
-              },
-              "queryRef": "Min(EV_Locations.sa4_name)",
-              "nativeQueryRef": "Min of sa4_name",
-              "displayName": "SA4"
-            }
-          ]
-        },
-        "X": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "EV_Locations"
-                    }
-                  },
-                  "Property": "longitude"
-                }
-              },
-              "queryRef": "EV_Locations.longitude",
-              "nativeQueryRef": "longitude",
-              "displayName": "Longitude"
+              "queryRef": "SA4_Summary.sa4_name",
+              "nativeQueryRef": "sa4_name",
+              "active": true
             }
           ]
         },
@@ -180,73 +36,54 @@
           "projections": [
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
                       "Entity": "EV_Locations"
                     }
                   },
-                  "Property": "latitude"
+                  "Property": "Total Charging Locations"
                 }
               },
-              "queryRef": "EV_Locations.latitude",
-              "nativeQueryRef": "latitude",
-              "displayName": "Latitude"
+              "queryRef": "EV_Locations.Total Charging Locations",
+              "nativeQueryRef": "Total Charging Locations"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "EV_Locations"
+                  }
+                },
+                "Property": "Total Charging Locations"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "objects": {
-      "mapControls": [
+      "legend": [
         {
           "properties": {
-            "defaultStyle": {
-              "expr": {
-                "Literal": {
-                  "Value": "'grayscale_light'"
-                }
-              }
-            },
-            "autoZoom": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "showStylePicker": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"
-                }
-              }
-            },
-            "showNavigationControls": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "showSelectionControl": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "pitch": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
                 }
               }
             }
           }
         }
       ],
-      "bubbleLayer": [
+      "categoryAxis": [
         {
           "properties": {
             "show": {
@@ -256,35 +93,136 @@
                 }
               }
             },
-            "bubbleRadius": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
-                }
-              }
-            },
-            "minBubbleRadius": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
-                }
-              }
-            },
-            "maxRadius": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
-                }
-              }
-            },
-            "clusteringEnabled": {
+            "showAxisTitle": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             },
-            "fillColor": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "labelColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#183B4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "45D"
+                }
+              }
+            },
+            "preferredCategoryWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "26D"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "28D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "labelColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#5B6F7C'"
+                    }
+                  }
+                }
+              }
+            },
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E5ECEF'"
+                    }
+                  }
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
               "solid": {
                 "color": {
                   "expr": {
@@ -294,31 +232,59 @@
                   }
                 }
               }
+            }
+          },
+          "selector": {
+            "metadata": "EV_Locations.Total Charging Locations"
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             },
-            "bubbleStrokeWidth": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#183B4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
               "expr": {
                 "Literal": {
                   "Value": "0D"
                 }
               }
             },
-            "mapTransparency": {
+            "labelPosition": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "legend": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "'OutsideEnd'"
                 }
               }
             }
@@ -431,7 +397,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'EV charging locations'"
+                  "Value": "'Charging locations by SA4'"
                 }
               }
             },
@@ -483,7 +449,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Hover for station, operator and SA4 details'"
+                  "Value": "'Responds to region, charger type and upcoming-status filters'"
                 }
               }
             },
@@ -510,165 +476,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "09b95d985200ae81ee1d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "EV_Locations"
-              }
-            },
-            "Property": "Station Display"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3bae34785e6c1542e3c6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "EV_Locations"
-              }
-            },
-            "Property": "latitude"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a077437c2c97d1d20d50",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "EV_Locations"
-              }
-            },
-            "Property": "longitude"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1fab11cd340b3ab0130e",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "EV_Locations"
-                  }
-                },
-                "Property": "Station Display"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "2031d01b1a1a6090e057",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "EV_Locations"
-                  }
-                },
-                "Property": "operator_standardised"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "7bf858eda209740c1b09",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "EV_Locations"
-                  }
-                },
-                "Property": "Charger Type Display"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e02d4c85d76317e996b4",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "EV_Locations"
-                  }
-                },
-                "Property": "charger_power_kw"
-              }
-            },
-            "Function": 4
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "2aa2476b7a0860380809",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "EV_Locations"
-                  }
-                },
-                "Property": "number_of_plugs"
-              }
-            },
-            "Function": 4
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "358b4c5148785156a070",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "EV_Locations"
-                  }
-                },
-                "Property": "sa4_name"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

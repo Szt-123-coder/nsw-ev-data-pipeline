@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Compare regional location counts and coverage. Density and comparison values describe the full dataset.",
+                    "value": "Compare regional counts and existing locations per 10,000 residents (ABS ERP 2025). The table retains the Gold baseline.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "16px",

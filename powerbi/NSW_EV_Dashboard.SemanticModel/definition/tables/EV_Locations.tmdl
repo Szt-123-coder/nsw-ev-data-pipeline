@@ -80,6 +80,51 @@ table EV_Locations
 		displayFolder: KPIs
 		lineageTag: e0905734-5399-440c-ba32-6b0e643b9a18
 
+	measure 'Resident Population' = CALCULATE(SUM(SA4_Summary[resident_population]), TREATAS(VALUES(GCC_Summary[gcc_code]), SA4_Summary[gcc_code]))
+		formatString: #,0
+		displayFolder: Population
+		lineageTag: 24d7646f-54e4-4618-86ae-1bd555006e1f
+
+	measure 'Existing Locations per 10,000 Residents' = DIVIDE([Existing Locations] * 10000, [Resident Population])
+		formatString: 0.00
+		displayFolder: Population
+		lineageTag: 5b2505f7-a611-450e-b7e5-3dda357722bb
+
+	measure 'Existing DC Locations per 10,000 Residents' = DIVIDE(CALCULATE([Existing Locations], KEEPFILTERS(EV_Locations[charger_type] = "DC")) * 10000, [Resident Population])
+		formatString: 0.00
+		displayFolder: Population
+		lineageTag: f62c162d-6816-491b-8508-7a38abadb668
+
+	measure 'Finding - Hunter DC Coverage' =
+			VAR HunterDC = CALCULATE([Total Charging Locations], REMOVEFILTERS(), EV_Locations[is_upcoming] = FALSE(), EV_Locations[sa4_code] = "106", EV_Locations[charger_type] = "DC")
+			VAR NSWDC = CALCULATE([Existing Locations], REMOVEFILTERS(), EV_Locations[charger_type] = "DC")
+			VAR HunterPopulation = CALCULATE(SUM(SA4_Summary[resident_population]), REMOVEFILTERS(), SA4_Summary[sa4_code] = "106")
+			VAR NSWPopulation = CALCULATE(SUM(SA4_Summary[resident_population]), REMOVEFILTERS())
+			VAR HunterRate = DIVIDE(HunterDC * 10000, HunterPopulation)
+			VAR NSWRate = DIVIDE(NSWDC * 10000, NSWPopulation)
+			RETURN FORMAT(HunterRate, "0.00") & " DC / 10k residents; " & FORMAT(DIVIDE(HunterRate, NSWRate), "0.0%") & " of NSW rate"
+		displayFolder: Findings
+		lineageTag: 7c663c5e-1218-485c-9685-44ac3567f5f1
+
+	measure 'Finding - Sydney DC Gap' =
+			VAR SydneyLocations = CALCULATE([Existing Locations], REMOVEFILTERS(), EV_Locations[gcc_name] = "Greater Sydney")
+			VAR SydneyDC = CALCULATE([Existing Locations], REMOVEFILTERS(), EV_Locations[gcc_name] = "Greater Sydney", EV_Locations[charger_type] = "DC")
+			VAR RestLocations = CALCULATE([Existing Locations], REMOVEFILTERS(), EV_Locations[gcc_name] = "Rest of NSW")
+			VAR RestDC = CALCULATE([Existing Locations], REMOVEFILTERS(), EV_Locations[gcc_name] = "Rest of NSW", EV_Locations[charger_type] = "DC")
+			VAR SydneyShare = DIVIDE(SydneyDC, SydneyLocations)
+			VAR RestShare = DIVIDE(RestDC, RestLocations)
+			RETURN "DC share: Sydney " & FORMAT(SydneyShare, "0.0%") & " vs rest " & FORMAT(RestShare, "0.0%") & "; " & FORMAT((SydneyShare - RestShare) * 100, "0.0") & " pp gap"
+		displayFolder: Findings
+		lineageTag: 86785b64-f105-410a-a954-a1dbf5399b2d
+
+	measure 'Finding - Top Three Operators' =
+			VAR Operators = CALCULATETABLE(ADDCOLUMNS(VALUES(Operator_Summary[operator_name]), "Locations", [Existing Locations]), REMOVEFILTERS())
+			VAR Leaders = TOPN(3, Operators, [Locations], DESC, Operator_Summary[operator_name], ASC)
+			VAR TotalExisting = CALCULATE([Existing Locations], REMOVEFILTERS())
+			RETURN CONCATENATEX(Leaders, Operator_Summary[operator_name], ", ", [Locations], DESC) & ": " & FORMAT(DIVIDE(SUMX(Leaders, [Locations]), TotalExisting), "0.0%") & " of existing locations"
+		displayFolder: Findings
+		lineageTag: c6a63b38-4b58-4b84-9483-24c523844c86
+
 	column source
 		dataType: string
 		lineageTag: bd8b7baf-9050-4c7d-9803-58d544631f60

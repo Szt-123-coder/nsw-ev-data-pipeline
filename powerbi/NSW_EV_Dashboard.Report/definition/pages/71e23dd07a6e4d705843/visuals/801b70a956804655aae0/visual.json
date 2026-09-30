@@ -1,148 +1,73 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "f165b3a390659f810d7a",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "801b70a956804655aae0",
   "position": {
     "x": 32,
-    "y": 800,
-    "z": 11000,
-    "height": 248,
-    "width": 600,
-    "tabOrder": 11
+    "y": 408,
+    "width": 608,
+    "height": 112,
+    "z": 14000,
+    "tabOrder": 14
   },
   "visual": {
-    "visualType": "clusteredBarChart",
-    "query": {
-      "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "GCC_Summary"
-                    }
-                  },
-                  "Property": "gcc_name"
-                }
-              },
-              "queryRef": "GCC_Summary.gcc_name",
-              "nativeQueryRef": "gcc_name",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "EV_Locations"
-                    }
-                  },
-                  "Property": "Total Charging Locations"
-                }
-              },
-              "queryRef": "EV_Locations.Total Charging Locations",
-              "nativeQueryRef": "Total Charging Locations"
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "EV_Locations"
-                  }
-                },
-                "Property": "Total Charging Locations"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
-      }
-    },
+    "visualType": "cardVisual",
     "objects": {
-      "legend": [
+      "value": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "16D"
                 }
               }
             },
-            "labelColor": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "fontColor": {
               "solid": {
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#183B4E'"
+                      "Value": "'#087F8C'"
                     }
                   }
                 }
               }
             },
-            "maxMarginFactor": {
+            "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "45D"
+                  "Value": "1D"
                 }
               }
             },
-            "preferredCategoryWidth": {
+            "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "26D"
+                  "Value": "0D"
                 }
               }
             },
-            "innerPadding": {
+            "textWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "28D"
+                  "Value": "true"
                 }
               }
             }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ],
-      "valueAxis": [
+      "label": [
         {
           "properties": {
             "show": {
@@ -152,21 +77,28 @@
                 }
               }
             },
-            "showAxisTitle": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "'Hunter Valley exc Newcastle · Existing snapshot (ERP 2025)'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "13D"
                 }
               }
             },
-            "labelColor": {
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'aboveValue'"
+                }
+              }
+            },
+            "fontColor": {
               "solid": {
                 "color": {
                   "expr": {
@@ -177,117 +109,149 @@
                 }
               }
             },
-            "gridlineShow": {
+            "textWrap": {
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "gridlineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#E5ECEF'"
-                    }
-                  }
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "start": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#087F8C'"
-                    }
-                  }
                 }
               }
             }
           },
           "selector": {
-            "metadata": "EV_Locations.Total Charging Locations"
+            "id": "default"
           }
         }
       ],
-      "labels": [
+      "outline": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
-            },
-            "fontSize": {
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "false"
                 }
               }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#183B4E'"
-                    }
-                  }
-                }
-              }
-            },
-            "labelDisplayUnits": {
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "shadowCustom": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "layout": [
+        {
+          "properties": {
+            "paddingIndividual": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             },
-            "labelPrecision": {
+            "paddingUniform": {
               "expr": {
                 "Literal": {
                   "Value": "0D"
                 }
               }
             },
-            "labelPosition": {
+            "backgroundShow": {
               "expr": {
                 "Literal": {
-                  "Value": "'OutsideEnd'"
+                  "Value": "false"
                 }
               }
             }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "paddingIndividual": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "paddingUniform": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "fillCustom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ]
@@ -390,14 +354,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Greater Sydney vs Rest of NSW'"
+                  "Value": "''"
                 }
               }
             },
@@ -442,14 +406,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Charging locations · responds to filters'"
+                  "Value": "''"
                 }
               }
             },
@@ -475,6 +439,29 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "EV_Locations"
+                    }
+                  },
+                  "Property": "Finding - Hunter DC Coverage"
+                }
+              },
+              "queryRef": "EV_Locations.Finding - Hunter DC Coverage",
+              "nativeQueryRef": "Finding - Hunter DC Coverage",
+              "displayName": "Finding - Hunter DC Coverage"
+            }
+          ]
+        }
+      }
+    }
   }
 }

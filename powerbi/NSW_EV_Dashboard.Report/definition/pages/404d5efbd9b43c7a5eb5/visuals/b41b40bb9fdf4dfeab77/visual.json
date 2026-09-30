@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "8fd5ed192a9d8d3e5223",
+  "name": "b41b40bb9fdf4dfeab77",
   "position": {
-    "x": 648,
-    "y": 544,
-    "z": 12000,
-    "height": 504,
-    "width": 600,
-    "tabOrder": 12
+    "x": 864,
+    "y": 232,
+    "z": 9000,
+    "height": 440,
+    "width": 400,
+    "tabOrder": 9
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Operator_Summary"
+                      "Entity": "SA4_Summary"
                     }
                   },
-                  "Property": "operator_name"
+                  "Property": "sa4_name"
                 }
               },
-              "queryRef": "Operator_Summary.operator_name",
-              "nativeQueryRef": "operator_name",
+              "queryRef": "SA4_Summary.sa4_name",
+              "nativeQueryRef": "sa4_name",
               "active": true
             }
           ]
@@ -42,11 +42,12 @@
                       "Entity": "EV_Locations"
                     }
                   },
-                  "Property": "Total Charging Locations"
+                  "Property": "Existing Locations per 10,000 Residents"
                 }
               },
-              "queryRef": "EV_Locations.Total Charging Locations",
-              "nativeQueryRef": "Total Charging Locations"
+              "queryRef": "EV_Locations.Existing Locations per 10,000 Residents",
+              "nativeQueryRef": "Existing Locations per 10,000 Residents",
+              "displayName": "Existing Locations per 10,000 Residents"
             }
           ]
         }
@@ -61,7 +62,7 @@
                     "Entity": "EV_Locations"
                   }
                 },
-                "Property": "Total Charging Locations"
+                "Property": "Existing Locations per 10,000 Residents"
               }
             },
             "direction": "Descending"
@@ -205,7 +206,7 @@
             "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "1D"
                 }
               }
             },
@@ -227,7 +228,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#087F8C'"
+                      "Value": "'#426A9C'"
                     }
                   }
                 }
@@ -235,7 +236,7 @@
             }
           },
           "selector": {
-            "metadata": "EV_Locations.Total Charging Locations"
+            "metadata": "Max(SA4_Summary.locations_per_1000_sqkm)"
           }
         }
       ],
@@ -277,7 +278,7 @@
             "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "1D"
                 }
               }
             },
@@ -397,7 +398,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 operators'"
+                  "Value": "'Existing locations per 10,000 residents'"
                 }
               }
             },
@@ -449,7 +450,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Charging locations · responds to filters'"
+                  "Value": "'ABS ERP: 30 Jun 2025 · geography / charger filters apply'"
                 }
               }
             },
@@ -476,111 +477,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "Filtere93a4d5d485aa1c2d9410000",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Operator_Summary"
-              }
-            },
-            "Property": "operator_name"
-          }
-        },
-        "type": "TopN",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "subquery",
-              "Expression": {
-                "Subquery": {
-                  "Query": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "d",
-                        "Entity": "Operator_Summary",
-                        "Type": 0
-                      },
-                      {
-                        "Name": "f",
-                        "Entity": "EV_Locations",
-                        "Type": 0
-                      }
-                    ],
-                    "Select": [
-                      {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "d"
-                            }
-                          },
-                          "Property": "operator_name"
-                        },
-                        "Name": "field"
-                      }
-                    ],
-                    "OrderBy": [
-                      {
-                        "Direction": 2,
-                        "Expression": {
-                          "Measure": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "f"
-                              }
-                            },
-                            "Property": "Total Charging Locations"
-                          }
-                        }
-                      }
-                    ],
-                    "Top": 10
-                  }
-                }
-              },
-              "Type": 2
-            },
-            {
-              "Name": "d",
-              "Entity": "Operator_Summary",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "operator_name"
-                      }
-                    }
-                  ],
-                  "Table": {
-                    "SourceRef": {
-                      "Source": "subquery"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      }
-    ]
   }
 }

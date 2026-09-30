@@ -23,6 +23,16 @@ cultureInfo zh-CN
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Upcoming": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -499,6 +509,258 @@ cultureInfo zh-CN
 			      "Terms": [
 			        {
 			          "Max power (kW)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.finding__hunter_dc_coverage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "Finding - Hunter DC Coverage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Finding - Hunter DC Coverage": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.finding__sydney_dc_gap": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "Finding - Sydney DC Gap"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Finding - Sydney DC Gap": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.finding__top_three_operators": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "Finding - Top Three Operators"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Finding - Top Three Operators": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.existing_locations_per_10000_residents": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "Existing Locations per 10,000 Residents"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Existing Locations per 10,000 Residents": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sa4_summary.resident_population": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SA4_Summary",
+			          "ConceptualProperty": "resident_population"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Residents (2025)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sa4_summary.locations_per_10000_residents": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SA4_Summary",
+			          "ConceptualProperty": "locations_per_10000_residents"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Existing locations / 10k": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sa4_summary.dc_locations_per_10000_residents": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SA4_Summary",
+			          "ConceptualProperty": "dc_locations_per_10000_residents"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Existing DC / 10k": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.operator_standardised": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "operator_standardised"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Operator": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.charger_type_display": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "Charger Type Display"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.sa4_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "sa4_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SA4 region": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.charger_power_kw": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "charger_power_kw"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Power (kW)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ev_locations.number_of_plugs": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "EV_Locations",
+			          "ConceptualProperty": "number_of_plugs"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Plugs": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
