@@ -1,0 +1,88 @@
+{
+  "scope": "Current Silver snapshot; is_upcoming=false; charging-location records",
+  "findings": {
+    "existing_locations": 1860.0,
+    "dc_locations": 433.0,
+    "hunter_locations": 122.0,
+    "hunter_dc": 9.0,
+    "sydney_locations": 901.0,
+    "sydney_dc": 252.0,
+    "rest_locations": 959.0,
+    "rest_dc": 181.0,
+    "nsw_population": 8592524.0,
+    "hunter_population": 316250.0,
+    "hunter_dc_share": 0.07377049180327869,
+    "nsw_dc_share": 0.23279569892473118,
+    "hunter_relative_dc_share": 0.31688941051754815,
+    "sydney_dc_share": 0.27968923418423974,
+    "rest_dc_share": 0.18873826903023982,
+    "dc_gap_percentage_points": 9.095096515399991,
+    "hunter_dc_per_10000_residents": 0.2845849802371542,
+    "nsw_dc_per_10000_residents": 0.5039264365162087,
+    "hunter_relative_dc_per_capita": 0.5647351669116103,
+    "top_three_locations": 818.0,
+    "top_three_share": 0.4397849462365591
+  },
+  "top_three_operators": [
+    {
+      "operator_standardised": "Exploren",
+      "existing_locations": 301
+    },
+    {
+      "operator_standardised": "Tesla",
+      "existing_locations": 263
+    },
+    {
+      "operator_standardised": "Chargefox",
+      "existing_locations": 254
+    }
+  ],
+  "population_provenance": {
+    "population_source": "https://www.abs.gov.au/statistics/people/population/regional-population/2024-25/32180DS0003_2001-25.xlsx",
+    "correspondence_source": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-4-july-2026-june-2031/access-and-downloads/correspondences/CG_SA4_2021_SA4_2026.csv",
+    "population_reference_date": "2025-06-30",
+    "population_geography_year": 2021,
+    "ev_geography_year": 2026,
+    "mapping_method": "official_one_to_one_weight_one",
+    "matched_sa4_count": 28,
+    "nsw_population": 8592524,
+    "bronze_inputs": [
+      {
+        "publisher": "Australian Bureau of Statistics",
+        "source_url": "https://www.abs.gov.au/statistics/people/population/regional-population/2024-25/32180DS0003_2001-25.xlsx",
+        "retrieved_at_utc": "2026-09-30T11:55:53.637379+00:00",
+        "sha256": "f35d0ca0caaf70b0933871747210e62ac3ff5f7ab7fb4876c92bb1f6e1f6a0a8",
+        "reference_date": "2025-06-30"
+      },
+      {
+        "publisher": "Australian Bureau of Statistics",
+        "source_url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-4-july-2026-june-2031/access-and-downloads/correspondences/CG_SA4_2021_SA4_2026.csv",
+        "retrieved_at_utc": "2026-09-30T11:55:53.717267+00:00",
+        "sha256": "e80d0de7f7fca99e23934833edfbb4254837a87623e99b692a4c5fa7f1cd666f",
+        "reference_date": null
+      }
+    ]
+  },
+  "ev_bronze_provenance": [
+    {
+      "dataset_id": "be1c4de4-4517-4bd0-8a09-2965ddfc7179",
+      "dataset_title": "EV Charging Locations",
+      "resource_id": "7bbb6461-e52d-4fe7-ace4-a15c30198de0",
+      "resource_name": "EV Charging Locations in NSW",
+      "resource_format": "CSV",
+      "resource_description": "Effective 20 April 2026",
+      "resource_last_modified": "2026-04-20T00:33:22.518559",
+      "source_url": "https://opendata.transport.nsw.gov.au/data/dataset/be1c4de4-4517-4bd0-8a09-2965ddfc7179/resource/7bbb6461-e52d-4fe7-ace4-a15c30198de0/download/ev_20251216.csv",
+      "retrieved_at_utc": "2026-09-14T12:33:19.695680+00:00",
+      "local_filename": "ev_20251216.csv",
+      "file_size_bytes": 283033,
+      "sha256": "43970e7751b951ab459a1be7bfd6141756c60ff8aa797debf11c5a597109865a",
+      "http_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    }
+  ],
+  "input_sha256": {
+    "data/silver/ev_sa4/ev_charging_locations_sa4_silver.parquet": "7c85e8e219e6c10d0cf30be2e99ce303409284642f2bbc8c23fe8576f3764b12",
+    "data/silver/population/sa4_population.parquet": "1586c9bca9e21f145c154ec3907f70157e21eae701ac0f83d482194069b28e4f",
+    "analysis/findings.sql": "2b3e6810348aa1d490a2cbc8fac3b4b80895cd331101f282ab2f5275f0403ab5"
+  }
+}

@@ -1,0 +1,16 @@
+EVALUATE
+ROW(
+ "Hunter finding", [Finding - Hunter DC Coverage],
+ "Sydney finding", [Finding - Sydney DC Gap],
+ "Operators finding", [Finding - Top Three Operators],
+ "NSW residents", [Resident Population],
+ "NSW locations / 10k", [Existing Locations per 10,000 Residents],
+ "NSW DC / 10k", [Existing DC Locations per 10,000 Residents],
+ "Hunter residents", CALCULATE([Resident Population], SA4_Summary[sa4_code] = "106"),
+ "Hunter DC / 10k", CALCULATE([Existing DC Locations per 10,000 Residents], SA4_Summary[sa4_code] = "106"),
+ "Sydney residents", CALCULATE([Resident Population], GCC_Summary[gcc_name] = "Greater Sydney"),
+ "Sydney DC / 10k", CALCULATE([Existing DC Locations per 10,000 Residents], GCC_Summary[gcc_name] = "Greater Sydney"),
+ "AC NSW residents", CALCULATE([Resident Population], ChargerType_Summary[charger_type] = "AC"),
+ "AC NSW locations / 10k", CALCULATE([Existing Locations per 10,000 Residents], ChargerType_Summary[charger_type] = "AC"),
+ "DC filtered snapshot", CALCULATE([Finding - Top Three Operators], ChargerType_Summary[charger_type] = "DC")
+)
